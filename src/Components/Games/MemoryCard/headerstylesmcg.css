@@ -1,0 +1,119 @@
+/*color: #fa64b6 */
+
+body {
+  background: linear-gradient(135deg, #111827, rgba(69, 10, 10, 0.3), #111827);
+}
+
+
+.mcgHeader {
+ font-family: "Rajdhani";
+  height: 30%;
+  width: 100%;
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.divTituloMcg {
+  display: flex;
+  height: 50%;
+  justify-content: space-between;
+}
+
+.divRellenoMcg {
+   height: 100%;
+   width: 120px;
+}
+
+.botonVolverMcg {
+  border: 1px solid #fa64b6;
+  background-color: rgba(236, 72, 153, 0.2);
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.3);
+  color:  #fa64b6;
+  font-size: 19px;
+  font-weight: 450;
+  height: 40px;
+  padding: 4px;
+  margin-top: 10px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  gap: 5px;
+  width: 95px;
+  
+}
+
+.botonVolverMcg:hover {
+  background-color: rgba(236, 72, 153, 0.3);
+}
+
+.divInfoMcg {
+  text-align: center;
+}
+
+.tituloMcg {
+  font-size: 45px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fa64b6;
+  text-shadow: 0 0 30px rgba(236, 72, 153, 0.8), 0 0 60px rgba(236, 72, 153, 0.4);
+}
+
+.tituloMcg > img {
+  height: 40px;
+  filter: drop-shadow(0 0 20px rgba(236, 72, 153, 0.8));
+}
+
+.subtituloMcg { 
+ font-weight: 500;
+ color: rgba(236, 168, 212, 0.7);
+}
+
+.imgHomeMcg {
+  height: 17px;
+}
+
+.divCounterMcg {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 20px;
+}
+
+.counterDivMcg {
+  background-color: rgba(236, 72, 153, 0.15);
+  border: 1px solid rgba(236, 72, 153, 0.5);
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.2);
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.counterDivMcg > h4 {
+  color: #fa64b6;
+}
+
+.counterDivMcg > p {
+  color: #ff83c7;
+}
+
+.divÚltima-puntuación {
+    background-color: rgba(234, 179, 8, 0.1);
+    border: 1px solid rgba(234, 179, 8, 0.5);
+    box-shadow: 0 0 20px rgba(234, 179, 8, 0.2);
+    padding: 8px;
+    border-radius: 10px;
+}
+
+.divÚltima-puntuación >h4 {
+  color: #facc15;
+}
+
+.divÚltima-puntuación > p {
+  color: #fde047;
+}

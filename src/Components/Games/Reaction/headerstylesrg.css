@@ -1,0 +1,45 @@
+body {
+  box-sizing: border-box;
+}
+
+.rgHeader  {
+  display: flex;
+  flex-direction: column;
+  height: 33%;
+}
+
+.divBotonVolverRg {
+  height: 33%;
+}
+
+.botonVolverRg {
+  display: flex;
+  gap: 10px;
+  color: #02cceb;
+  border: 1px solid #02cceb;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 15px;
+}
+
+.botonVolverRg > img {
+  height: 20px;
+}
+
+.divTituloRg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 33%;
+  margin-bottom: 20px;
+}
+
+.divBoard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+}

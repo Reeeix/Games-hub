@@ -1,0 +1,16 @@
+.mainfooter {
+  background-color: black;
+  height: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Rajdhani"; 
+  border-top: 2px solid #c27aff;
+}
+
+footer > p {
+   background: linear-gradient(to right, #b046f2,#c50064);
+  background-clip: text;
+  color: transparent;
+  font-weight: 600;
+}

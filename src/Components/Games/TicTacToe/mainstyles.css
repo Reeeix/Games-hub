@@ -1,0 +1,50 @@
+.ttt-mainsection {
+  font-family: "Rajdhani";
+  color: #f87171;
+  flex: 1;               
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px 0;
+}
+
+.ttt-divGame {
+  border: 2px solid #ef4444;
+  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 40px rgba(239, 68, 68, 0.4);
+  border-radius: 15px;
+  width: 400px;
+  height: 400px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 10px;
+  padding: 10px;
+  
+}
+
+.casillattt {
+  display: flex;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  background-color: rgba(239, 68, 68, 0.05);
+  border-radius: 10px;
+  color: #f87171;
+  justify-content: center;
+  align-items: center;
+  font-size: 70px;
+  height: 100px;
+}
+
+.casilla:hover {
+  background-color: rgba(239, 68, 68, 0.15);
+}
+
+.casilla-ocupada {
+  background-color: rgba(239, 68, 68, 0.2);
+}
+
+.ttt-divTurn {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}

@@ -1,0 +1,50 @@
+.mainHeader {
+  font-family: "Rajdhani"; 
+  height: 15%;
+  width: 100%;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border-bottom: 2px solid #00d3f2;
+}
+
+.headerDiv {
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  gap: 10px;
+}
+
+.headerDiv > h1 {
+  height:fit-content;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+  background: linear-gradient(to right, #22d3ee, #a78bfa, #f472b6); 
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 
+    0 0 8px rgba(167, 139, 250, 0.6),   
+    0 0 16px rgba(244, 114, 182, 0.5),  
+    0 0 24px rgba(34, 211, 238, 0.4);  
+}
+
+.divImgMando {
+  height: 35px;
+
+}
+
+.divImgMando > img {
+  height: 100%;
+  filter:drop-shadow(0 0 8px rgba(167, 139, 250, 0.6));
+}
+
+.headerLine {
+  height: 3px;
+  width: 130px; 
+  border-radius: 2px;
+  background: linear-gradient(to right, #22d3ee, #a78bfa);
+}
