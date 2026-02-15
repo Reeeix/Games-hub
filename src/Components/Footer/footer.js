@@ -1,4 +1,5 @@
 import "./footer.css";
+import "./responsive.css";
 
 const body = document.querySelector("body");
 

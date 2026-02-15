@@ -1,45 +1,92 @@
 body {
   box-sizing: border-box;
+  background: linear-gradient(135deg, #111827, rgba(30, 58, 138, 0.35), #111827);
 }
 
-.rgHeader  {
+.rgHeader {
+  font-family: "Rajdhani";
+  height: 30%;
+  width: 100%;
+  margin: 0 10px;
   display: flex;
   flex-direction: column;
-  height: 33%;
-}
-
-.divBotonVolverRg {
-  height: 33%;
-}
-
-.botonVolverRg {
-  display: flex;
-  gap: 10px;
-  color: #02cceb;
-  border: 1px solid #02cceb;
-  border-radius: 5px;
-  padding: 5px;
-  margin: 15px;
-}
-
-.botonVolverRg > img {
-  height: 20px;
+  gap: 15px;
 }
 
 .divTituloRg {
   display: flex;
-  flex-direction: column;
+  height: 50%;
+  justify-content: space-between;
+}
+
+.botonVolverRg {
+  border: 1px solid #38bdf8;
+  background-color: rgba(56, 189, 248, 0.15);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.25);
+  color: #38bdf8;
+  font-size: 19px;
+  font-weight: 450;
+  height: 40px;
+  padding: 4px;
+  margin-top: 10px;
+  border-radius: 8px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 33%;
-  margin-bottom: 20px;
+  gap: 6px;
+  width: 95px;
+}
+
+.botonVolverRg:hover {
+  background-color: rgba(56, 189, 248, 0.25);
+}
+
+.homeImgRg {
+  height: 17px;
+}
+
+.divInfoRg {
+  text-align: center;
+}
+
+.h1Rg {
+  font-size: 45px;
+  font-weight: 600;
+  color: #38bdf8;
+  text-shadow: 0 0 30px rgba(56, 189, 248, 0.7), 0 0 60px rgba(56, 189, 248, 0.35);
+}
+
+.h2Rg {
+  font-weight: 500;
+  color: rgba(125, 211, 252, 0.7);
+}
+
+.divRellenoRg {
+  height: 100%;
+  width: 120px;
 }
 
 .divBoard {
   display: flex;
-  align-items: center;
+  width: 100%;
   justify-content: center;
   gap: 20px;
-  width: 100%;
+}
+
+.scoreBox {
+  background-color: rgba(56, 189, 248, 0.14);
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+  padding: 8px;
+  border-radius: 10px;
+  min-width: 130px;
+  text-align: center;
+}
+
+.scoreBox > h4 {
+  color: #38bdf8;
+}
+
+.scoreBox > p {
+  color: #7dd3fc;
 }

@@ -1,4 +1,5 @@
 import './headerstyles.css';
+import './header-responsive.css';
 import headerTemplate from '../../Header/header';
 import mainTemplate from '../../Main/Main';
 import footerTemplate from '../../Footer/footer';
@@ -75,8 +76,8 @@ const tictactoeHeaderTemplate = () => {
   TicTacToeHeader.append(divTituloTtt, divCounterTtt);
   divTituloTtt.append(botonVolverttt, divInfoTtt, divRelleno);
   botonVolverttt.append(imgHomeTtt);
-  divInfoTtt.append(tituloTtt, subtituloTtt);
-  // Insert the div with last score into the relleno area and append header
+  divInfoTtt.append(tituloTtt, subtituloTtt);+
+  
   divRelleno.appendChild(divUltima);
   body.append(TicTacToeHeader);
 

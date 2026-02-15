@@ -1,0 +1,23 @@
+@media (max-width: 768px) {
+  .mainfooter {
+    height: auto;
+    min-height: 60px;
+    padding: 10px 12px;
+    text-align: center;
+  }
+
+  footer > p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainfooter {
+    min-height: 52px;
+    padding: 8px 10px;
+  }
+
+  footer > p {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,83 @@
+.rgMainSection {
+	font-family: "Rajdhani";
+	color: #7dd3fc;
+	flex: 1;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 25px 0;
+}
+
+.rgGameBox {
+	border: 1px solid #38bdf8;
+	box-shadow: 0 0 35px rgba(56, 189, 248, 0.35);
+	border-radius: 15px;
+	width: 470px;
+	min-height: 320px;
+	padding: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	gap: 22px;
+	cursor: pointer;
+	transition: 0.25s;
+}
+
+.pMessageRg {
+	font-size: 28px;
+	font-weight: 600;
+	line-height: 1.2;
+}
+
+.buttonIniciarRg {
+	width: 180px;
+	height: 45px;
+	border-radius: 10px;
+	border: 1px solid #60a5fa;
+	background-color: rgba(96, 165, 250, 0.16);
+	color: #dbeafe;
+	box-shadow: 0 0 20px rgba(96, 165, 250, 0.2);
+	font-size: 22px;
+	font-weight: 600;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.buttonIniciarRg:hover {
+	background-color: rgba(96, 165, 250, 0.24);
+}
+
+.state-idle {
+	background: linear-gradient(180deg, rgba(30, 64, 175, 0.42), rgba(30, 64, 175, 0.25));
+}
+
+.state-waiting {
+	background: linear-gradient(180deg, rgba(249, 115, 22, 0.4), rgba(194, 65, 12, 0.28));
+	border-color: #fb923c;
+	box-shadow: 0 0 40px rgba(249, 115, 22, 0.4);
+	animation: pulseReaction 1s infinite ease-in-out;
+}
+
+.state-ready {
+	background: linear-gradient(180deg, rgba(220, 38, 38, 0.52), rgba(153, 27, 27, 0.35));
+	border-color: #f87171;
+	box-shadow: 0 0 40px rgba(220, 38, 38, 0.45);
+}
+
+.state-result {
+	background: linear-gradient(180deg, rgba(30, 64, 175, 0.44), rgba(30, 58, 138, 0.3));
+}
+
+@keyframes pulseReaction {
+	0%,
+	100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.02);
+	}
+}

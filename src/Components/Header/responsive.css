@@ -1,0 +1,37 @@
+@media (max-width: 768px) {
+  .mainHeader {
+    height: auto;
+    padding: 14px 10px;
+    gap: 8px;
+  }
+
+  .headerDiv > h1 {
+    font-size: 21px;
+  }
+
+  .divImgMando {
+    height: 28px;
+  }
+
+  .headerLine {
+    width: 95px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainHeader {
+    padding: 10px 8px;
+  }
+
+  .headerDiv {
+    gap: 6px;
+  }
+
+  .headerDiv > h1 {
+    font-size: 18px;
+  }
+
+  .divImgMando {
+    height: 24px;
+  }
+}

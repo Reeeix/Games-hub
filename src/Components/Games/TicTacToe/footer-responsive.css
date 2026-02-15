@@ -1,0 +1,19 @@
+@media (max-width: 768px) {
+  .ttt-footer {
+    height: auto;
+    padding: 10px;
+    flex-wrap: wrap;
+  }
+
+  .ttt-footer > button {
+    width: min(90vw, 280px);
+  }
+}
+
+@media (max-width: 480px) {
+  .ttt-footer > button {
+    width: min(92vw, 250px);
+    height: 38px;
+    font-size: 15px;
+  }
+}

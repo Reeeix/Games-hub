@@ -1,0 +1,30 @@
+@media (max-width: 768px) {
+  .mcg-mainsection {
+    padding: 16px 10px;
+  }
+
+  .mcg-divGame {
+    width: min(94vw, 430px);
+    height: min(94vw, 430px);
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .casillamcg {
+    height: auto;
+    font-size: 58px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mcg-divGame {
+    width: min(96vw, 350px);
+    height: min(96vw, 350px);
+    gap: 6px;
+    padding: 6px;
+  }
+
+  .casillamcg {
+    font-size: 42px;
+  }
+}

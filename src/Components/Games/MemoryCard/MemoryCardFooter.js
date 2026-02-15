@@ -1,4 +1,5 @@
 import "./footerstylesmcg.css"
+import "./footer-responsive.css"
 
 const body = document.querySelector("body");
 

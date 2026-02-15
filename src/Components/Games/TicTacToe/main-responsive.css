@@ -1,0 +1,38 @@
+@media (max-width: 768px) {
+  .ttt-mainsection {
+    padding: 16px 10px;
+  }
+
+  .ttt-divGame {
+    width: min(92vw, 360px);
+    height: min(92vw, 360px);
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .casillattt {
+    height: auto;
+    font-size: 54px;
+  }
+
+  .ttt-divTurn {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ttt-divGame {
+    width: min(94vw, 320px);
+    height: min(94vw, 320px);
+    gap: 6px;
+    padding: 6px;
+  }
+
+  .casillattt {
+    font-size: 42px;
+  }
+
+  .p-ttt-winner {
+    font-size: 18px;
+  }
+}

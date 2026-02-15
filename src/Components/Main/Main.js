@@ -1,4 +1,5 @@
 import "./styles.css"
+import "./responsive.css"
 import tictactoeHeaderTemplate from "../Games/TicTacToe/TicTacToeHeader";
 import mainTictactoeTemplate from "../Games/TicTacToe/TicTacToeMain";
 import footerTictactoeTemplate from "../Games/TicTacToe/TicTacToeFooter";
@@ -8,6 +9,8 @@ import mainMemoryCardTemplate from "../Games/MemoryCard/MemoryCardMain";
 import memoryCardFooterTemplate from "../Games/MemoryCard/MemoryCardFooter";
 import initMeMoryCard from "../Games/MemoryCard/MemoryCard";
 import reactHeaderTemplate from "../Games/Reaction/ReactHeader";
+import reactMainTemplate from "../Games/Reaction/ReactMain";
+import initReactionGame from "../Games/Reaction/Reaction";
 
 const body = document.querySelector("body");
 const arrayJuegos = [
@@ -26,19 +29,19 @@ const arrayJuegos = [
 ]
 
 const mainTemplate = () => {
-  //Creamos los elementos
   const mainSection = document.createElement("section");
   mainSection.classList.add("mainSection");
 
-  const divBotonesJuegos = document.createElement("div");
-  divBotonesJuegos.classList.add("divBotones");
+  const buttonContainerJuegos = document.createElement("div");
+  buttonContainerJuegos.classList.add("divBotones");
 
   for (const juego of arrayJuegos) {
-    const divJuego = document.createElement("div");
-    divJuego.classList.add("div" + juego.nombre.replace(/\s+/g, "-"), "divJuego"); //Esto me lo ha dicho chatty porque me daba error al tener el juego "memory card" un espacio en el nombre e intentar usarlo para una clase
+    const buttonJuego = document.createElement("button");
+    buttonJuego.type = "button";
+    buttonJuego.classList.add("div" + juego.nombre.replace(/\s+/g, "-"), "divJuego");
 
-    const divIcono = document.createElement("div");
-    divIcono.classList.add("divIcono");
+    const buttonIcono = document.createElement("div");
+    buttonIcono.classList.add("divIcono");
 
     const icono = document.createElement("img");
     icono.src = juego.icono;
@@ -48,27 +51,28 @@ const mainTemplate = () => {
 
     const p = document.createElement("p");
     p.textContent = juego.descripcion;
-    divIcono.append(icono);
-    divJuego.append(divIcono, h3, p);
-    divBotonesJuegos.append(divJuego);
+    buttonIcono.append(icono);
+    buttonJuego.append(buttonIcono, h3, p);
+    buttonContainerJuegos.append(buttonJuego);
 
-    divJuego.addEventListener("click", () => {
-    body.innerHTML = "";
-    if (juego.nombre === "TicTacToe"){
-     tictactoeHeaderTemplate();
-     mainTictactoeTemplate();
-     footerTictactoeTemplate();
-     initTicTacToe();
-    } else if (juego.nombre === "React") {
-      reactHeaderTemplate();
-    } else if (juego.nombre === "Memory Card") {
-      memoryCardHeaderTemplate();
-      mainMemoryCardTemplate();
-      memoryCardFooterTemplate();
-      initMeMoryCard();
-    }
-  });
-
+    buttonJuego.addEventListener("click", () => {
+      body.innerHTML = "";
+      if (juego.nombre === "TicTacToe"){
+        tictactoeHeaderTemplate();
+        mainTictactoeTemplate();
+        footerTictactoeTemplate();
+        initTicTacToe();
+      } else if (juego.nombre === "React") {
+        reactHeaderTemplate();
+        reactMainTemplate();
+        initReactionGame();
+      } else if (juego.nombre === "Memory Card") {
+        memoryCardHeaderTemplate();
+        mainMemoryCardTemplate();
+        memoryCardFooterTemplate();
+        initMeMoryCard();
+      }
+    });
   }
   
   const divTituloMain = document.createElement("div");
@@ -93,9 +97,8 @@ const mainTemplate = () => {
 
   divPuntitos.append(p1, p2, p3)
   divTituloMain.append(h2, divPuntitos);
-  mainSection.append(divBotonesJuegos, divTituloMain)
+  mainSection.append(buttonContainerJuegos, divTituloMain)
   body.append(mainSection);
-  
 }
 
 export default mainTemplate;

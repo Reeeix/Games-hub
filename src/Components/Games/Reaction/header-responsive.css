@@ -1,0 +1,65 @@
+@media (max-width: 900px) {
+  .h1Rg {
+    font-size: 36px;
+  }
+
+  .divBoard {
+    gap: 10px;
+    padding: 0 8px;
+  }
+
+  .scoreBox {
+    min-width: 112px;
+  }
+}
+
+@media (max-width: 768px) {
+  .divTituloRg {
+    display: grid;
+    grid-template-columns: 95px 1fr 95px;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .divRellenoRg {
+    display: block;
+    width: 95px;
+    visibility: hidden;
+  }
+
+  .h1Rg {
+    font-size: 28px;
+  }
+
+  .h2Rg {
+    font-size: 18px;
+  }
+
+  .divBoard {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .botonVolverRg {
+    width: 82px;
+    font-size: 16px;
+  }
+
+  .divTituloRg {
+    grid-template-columns: 82px 1fr 82px;
+  }
+
+  .divRellenoRg {
+    width: 82px;
+  }
+
+  .h1Rg {
+    font-size: 24px;
+  }
+
+  .scoreBox {
+    min-width: 98px;
+    padding: 6px;
+  }
+}

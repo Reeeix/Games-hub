@@ -1,4 +1,5 @@
 import "./headerstylesmcg.css"
+import "./header-responsive.css"
 
 const body = document.querySelector("body");
 import headerTemplate from '../../Header/header';
@@ -25,27 +26,27 @@ export let arrayMcg = [
   }]
 
 const memoryCardHeaderTemplate = () => {
-  const mcgHeader = document.createElement("header"); //ok
+  const mcgHeader = document.createElement("header"); 
   mcgHeader.classList.add("mcgHeader");
-  const divTituloMcg = document.createElement("div"); //ok
+  const divTituloMcg = document.createElement("div"); 
   divTituloMcg.classList.add("divTituloMcg");
-  const divInfoMcg = document.createElement("div"); //ok
+  const divInfoMcg = document.createElement("div"); 
   divInfoMcg.classList.add("divInfoMcg");
-  const botonVolverMcg = document.createElement("button"); //ok
+  const botonVolverMcg = document.createElement("button"); 
   botonVolverMcg.classList.add("botonVolverMcg");
-  const imgHomeMcg = document.createElement("img"); //ok
+  const imgHomeMcg = document.createElement("img"); 
   imgHomeMcg.classList.add("imgHomeMcg");
-  const tituloMcg = document.createElement("h1"); //ok
+  const tituloMcg = document.createElement("h1"); 
   tituloMcg.classList.add("tituloMcg");
-  const img1Titulo = document.createElement("img"); //ok
+  const img1Titulo = document.createElement("img"); 
   img1Titulo.classList.add("imgTituloMcg");
-  const img2Titulo = document.createElement("img"); //ok
+  const img2Titulo = document.createElement("img"); 
   img2Titulo.classList.add("imgTituloMcg");
-  const subtituloMcg = document.createElement("h3"); //ok
+  const subtituloMcg = document.createElement("h3"); 
   subtituloMcg.classList.add("subtituloMcg");
-  const divRellenoMcg = document.createElement("div"); //ok
+  const divRellenoMcg = document.createElement("div"); 
   divRellenoMcg.classList.add("divRellenoMcg");
-  const divCounterMcg = document.createElement("div"); //ok
+  const divCounterMcg = document.createElement("div"); 
   divCounterMcg.classList.add("divCounterMcg");
 
   //Dar contenido
@@ -65,7 +66,6 @@ const memoryCardHeaderTemplate = () => {
     const counterNumber = document.createElement("p");
 
     counterTitle.textContent = element.Titulo;
-    // If this is the "Última puntuación" counter, try to read the last score from localStorage
     if (element.Titulo === "Última puntuación") {
       let lastText = "-";
       try {
@@ -86,7 +86,6 @@ const memoryCardHeaderTemplate = () => {
     counterDiv.append(counterTitle, counterNumber);
     divCounterMcg.append(counterDiv);
   }
-
   
   const tituloTextNode = document.createTextNode("Memory Card");
   tituloMcg.append(img1Titulo, tituloTextNode, img2Titulo);

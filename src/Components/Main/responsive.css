@@ -1,0 +1,49 @@
+@media (max-width: 1024px) {
+  .mainSection {
+    gap: 30px;
+    padding: 20px 14px;
+    height: auto;
+    min-height: 70%;
+  }
+
+  .divJuego {
+    width: 28%;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainSection {
+    gap: 26px;
+  }
+
+  .divBotones {
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    height: auto;
+  }
+
+  .divJuego {
+    width: min(88%, 360px);
+    padding: 16px 10px;
+  }
+
+  .divTituloMain > h2 {
+    text-align: center;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .divJuego > h3 {
+    font-size: 20px;
+  }
+
+  .divJuego > p {
+    font-size: 16px;
+  }
+
+  .divPuntitos {
+    transform: scale(2.2);
+  }
+}
