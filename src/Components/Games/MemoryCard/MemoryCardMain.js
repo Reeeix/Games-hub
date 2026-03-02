@@ -1,6 +1,6 @@
 import "./mainstylesmcg.css"
 import "./main-responsive.css"
-const body = document.querySelector("body");
+import { getAppRoot } from "../../../utils/appRoot";
 
 const mainMemoryCardTemplate = () => {
   const mcgMainSection = document.createElement("section");
@@ -32,7 +32,8 @@ const mainMemoryCardTemplate = () => {
   }
 
   mcgMainSection.append(divGameMcg);
-  body.append(mcgMainSection);
+  const appRoot = getAppRoot();
+  if (appRoot) appRoot.append(mcgMainSection);
 }
 
 export default mainMemoryCardTemplate;

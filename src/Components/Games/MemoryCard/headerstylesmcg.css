@@ -1,15 +1,12 @@
 /*color: #fa64b6 */
 
-body {
-  background: linear-gradient(135deg, #111827, rgba(69, 10, 10, 0.3), #111827);
-}
-
 
 .mcgHeader {
  font-family: "Rajdhani";
-  height: 30%;
+  height: auto;
   width: 100%;
-  margin: 0 10px;
+  margin: 0;
+  padding: 8px 10px;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -17,7 +14,7 @@ body {
 
 .divTituloMcg {
   display: flex;
-  height: 50%;
+  height: auto;
   justify-content: space-between;
 }
 

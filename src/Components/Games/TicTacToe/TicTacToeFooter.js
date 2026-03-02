@@ -1,7 +1,6 @@
 import "./footerstyles.css";
 import "./footer-responsive.css";
-
-const body = document.querySelector("body");
+import { getAppRoot } from "../../../utils/appRoot";
 
 const footerTictactoeTemplate = () => {
 
@@ -15,7 +14,8 @@ const footerTictactoeTemplate = () => {
   newGamettt.textContent = "Nueva Partida";
   restartTtt.textContent = "Reiniciar marcador";
 
-  body.append(tttFooter);
+  const appRoot = getAppRoot();
+  if (appRoot) appRoot.append(tttFooter);
   tttFooter.append(newGamettt, restartTtt);
 
 }

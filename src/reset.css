@@ -20,6 +20,13 @@ html, body {
   background: linear-gradient(135deg, #111827, rgba(69, 10, 10, 0.3), #111827);
 }
 
+#app {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;

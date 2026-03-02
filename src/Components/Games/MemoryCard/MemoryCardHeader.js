@@ -1,10 +1,9 @@
 import "./headerstylesmcg.css"
 import "./header-responsive.css"
-
-const body = document.querySelector("body");
 import headerTemplate from '../../Header/header';
 import mainTemplate from '../../Main/Main';
 import footerTemplate from '../../Footer/footer';
+import { clearApp, getAppRoot } from '../../../utils/appRoot';
 
 export let arrayMcg = [
   {
@@ -93,10 +92,11 @@ const memoryCardHeaderTemplate = () => {
   divInfoMcg.append(tituloMcg, subtituloMcg);
   divTituloMcg.append(botonVolverMcg, divInfoMcg, divRellenoMcg);
   mcgHeader.append(divTituloMcg, divCounterMcg);
-  body.append(mcgHeader);
+  const appRoot = getAppRoot();
+  if (appRoot) appRoot.append(mcgHeader);
 
   botonVolverMcg.addEventListener('click', () => {
-    body.innerHTML = '';
+    clearApp();
     headerTemplate();
     mainTemplate();
     footerTemplate();

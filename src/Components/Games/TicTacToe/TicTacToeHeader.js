@@ -3,7 +3,7 @@ import './header-responsive.css';
 import headerTemplate from '../../Header/header';
 import mainTemplate from '../../Main/Main';
 import footerTemplate from '../../Footer/footer';
-const body = document.querySelector("body");
+import { clearApp, getAppRoot } from '../../../utils/appRoot';
 
 const counterArray = [
   {titulo:"Jugador X",
@@ -36,22 +36,6 @@ const tictactoeHeaderTemplate = () => {
   const divRelleno = document.createElement("div");
   divRelleno.classList.add("div-relleno")
 
-  const lastScoreRaw = localStorage.getItem('tttLastScore');
-  const divUltima = document.createElement('div');
-  divUltima.classList.add('div-ultima');
-  const pUltima = document.createElement('p');
-  let ultimaText = 'Última puntuación: -';
-  if (lastScoreRaw) {
-    try {
-      const last = JSON.parse(lastScoreRaw);
-      const when = last.date ? new Date(last.date).toLocaleString() : null;
-      ultimaText = `Última puntuación: ${last.winner}${when ? ' - ' + when : ''}`;
-    } catch (e) {
-      ultimaText = 'Última puntuación: -';
-    }
-  }
-  pUltima.textContent = ultimaText;
-  divUltima.appendChild(pUltima);
   const divCounterTtt = document.createElement("div");
   divCounterTtt.classList.add("ttt-counter")
 
@@ -76,16 +60,15 @@ const tictactoeHeaderTemplate = () => {
   TicTacToeHeader.append(divTituloTtt, divCounterTtt);
   divTituloTtt.append(botonVolverttt, divInfoTtt, divRelleno);
   botonVolverttt.append(imgHomeTtt);
-  divInfoTtt.append(tituloTtt, subtituloTtt);+
-  
-  divRelleno.appendChild(divUltima);
-  body.append(TicTacToeHeader);
+  divInfoTtt.append(tituloTtt, subtituloTtt);
+  const appRoot = getAppRoot();
+  if (appRoot) appRoot.append(TicTacToeHeader);
 
   botonVolverttt.addEventListener('click', () => {
-  body.innerHTML = '';
-  headerTemplate();
-  mainTemplate();
-  footerTemplate();
+    clearApp();
+    headerTemplate();
+    mainTemplate();
+    footerTemplate();
   });
 
 }

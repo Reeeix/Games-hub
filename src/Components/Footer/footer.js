@@ -1,7 +1,6 @@
 import "./footer.css";
 import "./responsive.css";
-
-const body = document.querySelector("body");
+import { getAppRoot } from "../../utils/appRoot";
 
 const footerTemplate = () => {
   const footer = document.createElement("footer");
@@ -10,7 +9,8 @@ const footerTemplate = () => {
   pFooter.textContent = "Raquel Romero Galindo, RTC project © 2025"
 
   footer.append(pFooter);
-  body.append(footer);
+  const appRoot = getAppRoot();
+  if (appRoot) appRoot.append(footer);
 }
 
 export default footerTemplate;

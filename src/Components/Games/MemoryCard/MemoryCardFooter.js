@@ -1,7 +1,6 @@
 import "./footerstylesmcg.css"
 import "./footer-responsive.css"
-
-const body = document.querySelector("body");
+import { getAppRoot } from "../../../utils/appRoot";
 
 const memoryCardFooterTemplate = () => {
   const footerMcg = document.createElement("footer");
@@ -20,7 +19,8 @@ const memoryCardFooterTemplate = () => {
 
   footerMcg.append(divButtonFooter);
   divButtonFooter.append(buttonNewGameMCG);
-  body.append(footerMcg);
+  const appRoot = getAppRoot();
+  if (appRoot) appRoot.append(footerMcg);
 }
 
 export default memoryCardFooterTemplate;

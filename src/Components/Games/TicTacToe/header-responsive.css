@@ -20,10 +20,14 @@
 
 @media (max-width: 768px) {
   .tictactoe-div-title {
-    display: grid;
-    grid-template-columns: 95px 1fr 95px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 10px;
+  }
+
+  .boton-volver {
+    margin-top: 0;
   }
 
   .ttt-h1 {
@@ -35,13 +39,13 @@
   }
 
   .div-relleno {
-    display: block;
-    width: 95px;
-    visibility: hidden;
+    display: none;
   }
 
   .ttt-counter {
     flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
   }
 }
 
@@ -49,14 +53,6 @@
   .boton-volver {
     width: 82px;
     font-size: 16px;
-  }
-
-  .tictactoe-div-title {
-    grid-template-columns: 82px 1fr 82px;
-  }
-
-  .div-relleno {
-    width: 82px;
   }
 
   .ttt-h1 {

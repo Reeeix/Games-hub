@@ -1,7 +1,6 @@
-import "./styles.css"
-import "./responsive.css"
-
-const body = document.querySelector("body");
+import "./header.styles.css"
+import "./header.responsive.css"
+import { getAppRoot } from "../../utils/appRoot";
 
 const headerTemplate = () => {
   const headerSection = document.createElement("header");
@@ -30,7 +29,8 @@ const headerTemplate = () => {
   divImgMando.append(imgMando);
   headerDiv.append(h1, divImgMando);
   headerSection.append(headerDiv, headerLine);
-  body.append(headerSection);
+  const appRoot = getAppRoot();
+  if (appRoot) appRoot.append(headerSection);
 }
 
 export default headerTemplate;

@@ -1,14 +1,13 @@
 import "./mainstilesrg.css";
 import "./main-responsive.css";
-
-const body = document.querySelector("body");
+import { getAppRoot } from "../../../utils/appRoot";
 
 const reactMainTemplate = () => {
 	const rgMainSection = document.createElement("section");
 	rgMainSection.classList.add("rgMainSection");
 
 	const rgGameBox = document.createElement("div");
-	rgGameBox.classList.add("rgGameBox", "state-idle");
+	rgGameBox.classList.add("rgGameBox", "estado-inicial");
 
 	const pMessage = document.createElement("p");
 	pMessage.classList.add("pMessageRg");
@@ -20,7 +19,8 @@ const reactMainTemplate = () => {
 
 	rgMainSection.append(rgGameBox);
 	rgGameBox.append(pMessage, buttonIniciar);
-	body.append(rgMainSection);
+	const appRoot = getAppRoot();
+	if (appRoot) appRoot.append(rgMainSection);
 };
 
 export default reactMainTemplate;

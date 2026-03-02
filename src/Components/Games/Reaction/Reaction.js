@@ -58,12 +58,12 @@ const updateHeader = () => {
 	}
 };
 
-const setVisualState = (nuevoEstado, texto, showButton = false, buttonText = "Iniciar") => {
+const setVisualState = (newState, texto, showButton = false, buttonText = "Iniciar") => {
 	const { gameBox, pMessage, buttonIniciar } = getElements();
 	if (!gameBox || !pMessage || !buttonIniciar) return;
 
-	gameBox.classList.remove("state-idle", "state-waiting", "state-ready", "state-result");
-	gameBox.classList.add(`state-${nuevoEstado}`);
+	gameBox.classList.remove("estado-inicial", "estado-espera", "estado-listo", "estado-resultado");
+	gameBox.classList.add(`estado-${newState}`);
 
 	pMessage.textContent = texto;
 	buttonIniciar.style.display = showButton ? "inline-flex" : "none";
@@ -73,7 +73,7 @@ const setVisualState = (nuevoEstado, texto, showButton = false, buttonText = "In
 const resetToIdle = (customText) => {
 	estadoJuego = "idle";
 	setVisualState(
-		"idle",
+		"inicial",
 		customText || "Dale a iniciar, y cuando la pantalla se ponga roja, haz click lo más rapido que puedas!",
 		true,
 		"Iniciar"
@@ -83,14 +83,14 @@ const resetToIdle = (customText) => {
 const prepararAhora = () => {
 	estadoJuego = "ready";
 	tiempoInicio = performance.now();
-	setVisualState("ready", "AHORA!");
+	setVisualState("listo", "AHORA!");
 };
 
 const startRound = () => {
 	if (estadoJuego === "waiting" || estadoJuego === "ready") return;
 
 	estadoJuego = "waiting";
-	setVisualState("waiting", "Estate atento...");
+	setVisualState("espera", "Estate atento...");
 
 	const randomDelay = Math.floor(Math.random() * 2500) + 1500;
 	timeoutCambio = setTimeout(prepararAhora, randomDelay);
@@ -100,7 +100,7 @@ const onGameBoxClick = () => {
 	if (estadoJuego === "waiting") {
 		clearTimeout(timeoutCambio);
 		timeoutCambio = null;
-		setVisualState("result", "Te adelantaste... pulsa iniciar otra vez", true, "Iniciar");
+		setVisualState("resultado", "Te adelantaste... pulsa iniciar otra vez", true, "Iniciar");
 		estadoJuego = "idle";
 		return;
 	}
@@ -120,7 +120,7 @@ const onGameBoxClick = () => {
 	updateHeader();
 
 	estadoJuego = "result";
-	setVisualState("result", `Tu reacción: ${reactionTime} ms`, true, "Iniciar otra vez");
+	setVisualState("resultado", `Tu reacción: ${reactionTime} ms`, true, "Iniciar otra vez");
 };
 
 const initReactionGame = () => {

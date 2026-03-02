@@ -15,10 +15,14 @@
 
 @media (max-width: 768px) {
   .divTituloMcg {
-    display: grid;
-    grid-template-columns: 95px 1fr 95px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 10px;
+  }
+
+  .botonVolverMcg {
+    margin-top: 0;
   }
 
   .tituloMcg {
@@ -30,13 +34,13 @@
   }
 
   .divRellenoMcg {
-    display: block;
-    width: 95px;
-    visibility: hidden;
+    display: none;
   }
 
   .divCounterMcg {
     flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
   }
 }
 
@@ -44,14 +48,6 @@
   .botonVolverMcg {
     width: 82px;
     font-size: 16px;
-  }
-
-  .divTituloMcg {
-    grid-template-columns: 82px 1fr 82px;
-  }
-
-  .divRellenoMcg {
-    width: 82px;
   }
 
   .counterDivMcg {

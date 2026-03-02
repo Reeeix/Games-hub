@@ -3,12 +3,11 @@ import "./header-responsive.css";
 import headerTemplate from "../../Header/header";
 import mainTemplate from "../../Main/Main";
 import footerTemplate from "../../Footer/footer";
-
-const body = document.querySelector("body");
+import { clearApp, getAppRoot } from "../../../utils/appRoot";
 
 const scoreCards = [
   {
-    titulo: "Last score",
+    titulo: "Último tiempo",
     valor: "-"
   },
   {
@@ -61,7 +60,7 @@ const reactHeaderTemplate = () => {
     h4.textContent = element.titulo;
     p.textContent = element.valor;
 
-    if (element.titulo === "Last score" && storageData?.lastTime) {
+    if (element.titulo === "Último tiempo" && storageData?.lastTime) {
       p.textContent = `${storageData.lastTime} ms`;
     }
     if (element.titulo === "Mejor tiempo" && storageData?.bestTime) {
@@ -86,10 +85,11 @@ const reactHeaderTemplate = () => {
   divTituloRg.append(botonVolverRg, divInfoRg, divRellenoRg);
   botonVolverRg.append(homeImg);
   divInfoRg.append(h1Rg, h2Rg);
-  body.append(rgHeader);
+  const appRoot = getAppRoot();
+  if (appRoot) appRoot.append(rgHeader);
 
   botonVolverRg.addEventListener("click", () => {
-    body.innerHTML = "";
+    clearApp();
     headerTemplate();
     mainTemplate();
     footerTemplate();

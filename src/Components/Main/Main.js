@@ -1,5 +1,5 @@
-import "./styles.css"
-import "./responsive.css"
+import "./main.styles.css"
+import "./main.responsive.css"
 import tictactoeHeaderTemplate from "../Games/TicTacToe/TicTacToeHeader";
 import mainTictactoeTemplate from "../Games/TicTacToe/TicTacToeMain";
 import footerTictactoeTemplate from "../Games/TicTacToe/TicTacToeFooter";
@@ -11,8 +11,8 @@ import initMeMoryCard from "../Games/MemoryCard/MemoryCard";
 import reactHeaderTemplate from "../Games/Reaction/ReactHeader";
 import reactMainTemplate from "../Games/Reaction/ReactMain";
 import initReactionGame from "../Games/Reaction/Reaction";
+import { clearApp, getAppRoot } from "../../utils/appRoot";
 
-const body = document.querySelector("body");
 const arrayJuegos = [
   {nombre: "TicTacToe",
    descripcion: "Clásico estratégico",
@@ -29,7 +29,7 @@ const arrayJuegos = [
 ]
 
 const mainTemplate = () => {
-  const mainSection = document.createElement("section");
+  const mainSection = document.createElement("main");
   mainSection.classList.add("mainSection");
 
   const buttonContainerJuegos = document.createElement("div");
@@ -56,7 +56,7 @@ const mainTemplate = () => {
     buttonContainerJuegos.append(buttonJuego);
 
     buttonJuego.addEventListener("click", () => {
-      body.innerHTML = "";
+      clearApp();
       if (juego.nombre === "TicTacToe"){
         tictactoeHeaderTemplate();
         mainTictactoeTemplate();
@@ -98,7 +98,8 @@ const mainTemplate = () => {
   divPuntitos.append(p1, p2, p3)
   divTituloMain.append(h2, divPuntitos);
   mainSection.append(buttonContainerJuegos, divTituloMain)
-  body.append(mainSection);
+  const appRoot = getAppRoot();
+  if (appRoot) appRoot.append(mainSection);
 }
 
 export default mainTemplate;
