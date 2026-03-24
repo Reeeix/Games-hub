@@ -4,6 +4,7 @@ import headerTemplate from "../../Header/header";
 import mainTemplate from "../../Main/Main";
 import footerTemplate from "../../Footer/footer";
 import { clearApp, getAppRoot } from "../../../utils/appRoot";
+import { clearPendingRound } from "./Reaction";
 
 const scoreCards = [
   {
@@ -89,6 +90,7 @@ const reactHeaderTemplate = () => {
   if (appRoot) appRoot.append(rgHeader);
 
   botonVolverRg.addEventListener("click", () => {
+    clearPendingRound();
     clearApp();
     headerTemplate();
     mainTemplate();

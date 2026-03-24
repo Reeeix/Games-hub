@@ -58,6 +58,14 @@ const updateHeader = () => {
 	}
 };
 
+const clearPendingRound = () => {
+	if (timeoutCambio) {
+		clearTimeout(timeoutCambio);
+		timeoutCambio = null;
+	}
+	estadoJuego = "idle";
+};
+
 const setVisualState = (newState, texto, showButton = false, buttonText = "Iniciar") => {
 	const { gameBox, pMessage, buttonIniciar } = getElements();
 	if (!gameBox || !pMessage || !buttonIniciar) return;
@@ -71,7 +79,7 @@ const setVisualState = (newState, texto, showButton = false, buttonText = "Inici
 };
 
 const resetToIdle = (customText) => {
-	estadoJuego = "idle";
+	clearPendingRound();
 	setVisualState(
 		"inicial",
 		customText || "Dale a iniciar, y cuando la pantalla se ponga roja, haz click lo más rapido que puedas!",
@@ -98,10 +106,8 @@ const startRound = () => {
 
 const onGameBoxClick = () => {
 	if (estadoJuego === "waiting") {
-		clearTimeout(timeoutCambio);
-		timeoutCambio = null;
+		clearPendingRound();
 		setVisualState("resultado", "Te adelantaste... pulsa iniciar otra vez", true, "Iniciar");
-		estadoJuego = "idle";
 		return;
 	}
 
@@ -124,6 +130,7 @@ const onGameBoxClick = () => {
 };
 
 const initReactionGame = () => {
+	clearPendingRound();
 	readStorage();
 	updateHeader();
 
@@ -140,4 +147,5 @@ const initReactionGame = () => {
 	gameBox.addEventListener("click", onGameBoxClick);
 };
 
+export { clearPendingRound };
 export default initReactionGame;

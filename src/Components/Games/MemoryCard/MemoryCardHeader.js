@@ -4,6 +4,7 @@ import headerTemplate from '../../Header/header';
 import mainTemplate from '../../Main/Main';
 import footerTemplate from '../../Footer/footer';
 import { clearApp, getAppRoot } from '../../../utils/appRoot';
+import { clearPendingFlip } from './MemoryCard';
 
 export let arrayMcg = [
   {
@@ -96,6 +97,7 @@ const memoryCardHeaderTemplate = () => {
   if (appRoot) appRoot.append(mcgHeader);
 
   botonVolverMcg.addEventListener('click', () => {
+    clearPendingFlip();
     clearApp();
     headerTemplate();
     mainTemplate();

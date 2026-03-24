@@ -51,11 +51,18 @@ const paintWinningLine = (line, casillas) => {
   });
 };
 
+const resetGameState = () => {
+  board = ["", "", "", "", "", "", "", "", ""];
+  gameActive = true;
+  turno = "X";
+};
+
 const initTicTacToe = () => {
   const { casillas, pTttWinner } = getElements();
   const newGameButton = document.querySelector(".new-game-ttt");
   const restartButton = document.querySelector(".restart-ttt");
 
+  resetGameState();
   readScores();
   renderScores();
   if (pTttWinner) pTttWinner.textContent = `Turno del jugador: ${turno}`;
@@ -97,9 +104,7 @@ const initTicTacToe = () => {
       casilla.textContent = "";
       casilla.classList.remove("casilla-ganadora");
     });
-    board = ["", "", "", "", "", "", "", "", ""];
-    gameActive = true;
-    turno = "X";
+    resetGameState();
     if (pTttWinner) pTttWinner.textContent = `Turno del jugador: ${turno}`;
   };
 

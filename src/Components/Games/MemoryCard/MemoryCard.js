@@ -4,6 +4,7 @@ let seleccionadas = [];
 let movimientos = 0;
 let parejas = 0;
 let bloqueado = false;
+let timeoutVolteo = null;
 
 let segundos = 0;
 let intervalo;
@@ -26,6 +27,13 @@ const pararTemporizador = () => {
   temporizadorIniciado = false;
 }
 
+const clearPendingFlip = () => {
+  if (timeoutVolteo) {
+    clearTimeout(timeoutVolteo);
+    timeoutVolteo = null;
+  }
+}
+
 const barajarCartas = () => {
   const mazo = [...emojisBase, ...emojisBase].sort(() => Math.random() - 0.5);
   const casillas = Array.from(document.querySelectorAll(".casillamcg"));
@@ -45,6 +53,7 @@ function actualizarHeader(movimientos, parejas) {
 }
 
 const clearScoreandBoard = () => {
+  clearPendingFlip();
   seleccionadas = [];
   movimientos = 0;
   parejas = 0;
@@ -57,6 +66,8 @@ const clearScoreandBoard = () => {
 }
 
 const initMeMoryCard = () => {
+  clearScoreandBoard();
+
   const casillas = Array.from(document.querySelectorAll(".casillamcg"));
   casillas.forEach((casilla) => {
     casilla.addEventListener("click", () => {
@@ -95,11 +106,12 @@ function manejarClick(casilla) {
       seleccionadas = [];
       bloqueado = false;
     } else {
-      setTimeout(() => {
+      timeoutVolteo = setTimeout(() => {
         primera.querySelector("p").classList.add("hidden");
         segunda.querySelector("p").classList.add("hidden");
         seleccionadas = [];
         bloqueado = false;
+        timeoutVolteo = null;
       }, 1000);
     }
   }
@@ -121,4 +133,5 @@ function manejarClick(casilla) {
   }
 }
 
+export { clearPendingFlip };
 export default initMeMoryCard;
